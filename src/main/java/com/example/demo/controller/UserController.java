@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.Mysql.User;
-import com.example.demo.Mysql.UserDao;
+import com.example.demo.entity.User;
+import com.example.demo.Dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,8 +31,8 @@ public class UserController {
         user.setName(Name);
         user.setAge(Age);
         userDao.save(user);
-        User save =userDao.save(user);
-        return save;
+//        User save =userDao.save(user);
+        return userDao.save(user);
     }
     //删除单条数据
     @GetMapping("/deleteOne")
